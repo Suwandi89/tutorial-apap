@@ -13,4 +13,6 @@ public interface KebunSafariService {
 
     // Method untuk mendapatkan data sebuah KebunSafari berdasarkan ID yang dimiliki
     KebunSafariModel getKebunSafariByIdKebunSafari(String idKebunSafari);
+
+    List<KebunSafariModel> getKebunSafariByTelpKebunSafari(String noTelp);
 }

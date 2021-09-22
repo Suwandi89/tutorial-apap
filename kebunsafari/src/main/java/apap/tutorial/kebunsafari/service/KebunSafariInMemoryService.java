@@ -34,4 +34,14 @@ public class KebunSafariInMemoryService implements KebunSafariService{
         return null;
     }
 
+    @Override
+    public List<KebunSafariModel> getKebunSafariByTelpKebunSafari(String noTelp) {
+        List<KebunSafariModel> listTelp = new ArrayList<KebunSafariModel>();
+        for (KebunSafariModel x : listKebunSafari){
+            if(x.getNoTelepon().equals(noTelp)){
+                listTelp.add(x);
+            }
+        }
+        return listTelp;
+    }
 }

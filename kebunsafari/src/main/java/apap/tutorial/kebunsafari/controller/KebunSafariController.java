@@ -107,4 +107,22 @@ public class KebunSafariController {
 
         return "delete-kebun-safari";
     }
+
+    @RequestMapping(value="/kebun-safari/delete-by-telepon")
+    public String deletebyteleponKebunSafari(
+            @RequestParam(value="noTelp",required = true) String noTelp, Model model){
+        // Mendapatkan list Kebun Safari
+        List<KebunSafariModel> listKebun = kebunSafariService.getKebunSafariList();
+
+        //delete element
+        List<KebunSafariModel> listKebunbytelp = kebunSafariService.getKebunSafariByTelpKebunSafari(noTelp);
+
+        // Menghapus Objek Kebun Safari dari list
+        for (KebunSafariModel e : listKebunbytelp){
+            listKebun.remove(e);
+        }
+
+        return "delete-kebun-safari";
+    }
+
 }
