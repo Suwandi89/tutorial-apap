@@ -2,6 +2,26 @@
 ## Authors
 * **Suwandi Kurniawan** - *1906299175* - *A*
 ---
+## Tutorial 3
+### What I have learned today
+Saya belajar terkait database dan relasi database dengan konsep CRUD melalui Spring serta pemanfaatan JPARepository untuk melakukan query pada basis data.
+### Pertanyaan
+1. Tolong jelaskan secara singkat apa kegunaan dari anotasi-anotasi yang ada pada model (@AllArgsConstructor, @NoArgsConstructor, @Setter, @Getter, @Entity, @Table)
+> @AllArgsConstructor digunakan untuk membuat constructor secara otomatis pada model yang memiliki parameter, @NoArgsConstructor digunakan untuk membuat constructor secara otomatis pada model yang tidak memiliki parameter, @Setter digunakan untuk menambahkan method setter kepada semua atribut kelas, @Getter digunakan untuk menambahkan method getter kepada semua atribut kelas, @Entity digunakan untuk menyatakan kelas dapat dilakukan mapping ke tabel, @Table digunakan untuk melakukan rename terhadap nama tabel yang ingin digunakan agar tidak mewarisi dari nama kelasnya.
+2. Pada class CabangDB, terdapat method findByNoCabang, apakah kegunaan dari method tersebut?
+> Method findByNoCabang digunakan untuk mencari cabang berdasarkan noCabang yang dipass dari parameter.
+3. Jelaskan perbedaan kegunaan dari anotasi @JoinTable dan @JoinColumn 
+> Anotasi @JoinTable digunakan untuk membuat tabel baru berdasarkan 2 tabel yang ingin digabungkan dengan foreign key yang saling terhubung, @JoinColumn digunakan untuk menandai kolom sebagai kolom gabungan untuk asosiasi atau koleksi elemen.
+4. Pada class PegawaiModel, digunakan anotasi @JoinColumn pada atribut cabang, apa kegunaan dari name, referencedColumnName, dan nullable dalam anotasi tersebut? dan apa perbedaan nullable dan penggunaan anotasi @NotNull
+> Kegunaan dari name adalah untuk membuat nama foreign keynya, referencedColumnName untuk menentukan atribut tujuan foreign keynya, dan nullable digunakan untuk menyatakan tipe dari foreign keynya yang boleh null atau tidak. Kemudian perbedaan dari nullable dan @Notnull adalah pada @Notnull untuk atribut biasa, sedangkan nullable digunakan untuk foreign key.
+5. Jelaskan kegunaan FetchType.LAZY, CascadeType.ALL, dan FetchType.EAGER
+- FetchType.LAZY digunakan memberi tahu Hibernate untuk tidak melakukan load untuk semua collection objek child tetapi hanya mengambil entitas terkait yang dibutuhkan dari database saat menggunakan relasi, umumnya digunakan untuk relasi One to Many. 
+- CascadeType.ALL digunakan untuk menyebarkan semua operasi termasuk yang khusus dari Hibernate dari induk ke entitas anak.
+- FetchType.EAGER digunakan untuk memberi tahu Hibernate sehingga segera mendapatkan semua elemen/koleksi relasi saat induknya diambil. Umumnya digunakan untuk relasi Many to One.
+
+### What I did not understand
+
+---
 ## Tutorial 2
 ### What I have learned today
 Saya belajar lebih dalam terkait cara membuat aplikasi web Springboot dengan model, service, controller. Dan saya belajar membuat method pada Controller untuk mengambil data serta manipulasi data seperti melakukan update dan delete juga (dengan PathVariable, RequestParam). 
