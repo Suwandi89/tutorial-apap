@@ -38,7 +38,12 @@ public class PegawaiController {
             @ModelAttribute PegawaiModel pegawai,
             Model model
     ) {
-        pegawaiService.addPegawai(pegawai);
+        boolean flag = false;
+        if (pegawai.getCabang().getListPegawai().size() < 3){
+            pegawaiService.addPegawai(pegawai);
+            flag = true;
+        }
+        model.addAttribute("flag", flag);
         model.addAttribute("noCabang", pegawai.getCabang().getNoCabang());
         model.addAttribute("namaPegawai", pegawai.getNamaPegawai());
         return "add-pegawai";

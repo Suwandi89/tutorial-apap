@@ -10,7 +10,7 @@
   <div class="card m-4 p-4">
     <div class="card-body">
       <div class="justify-content-center">
-        <h2 th:text="'Cabang Emsidi dengan nomor ' + ${noCabang} + ' berhasil menambahkan '+${namaPegawai}+ ' sebagai pegawai.'"></h2>
+        <h2 th:text="${flag} ? 'Cabang Emsidi dengan nomor ' + ${noCabang} + ' berhasil menambahkan '+${namaPegawai}+ ' sebagai pegawai.' : 'Pegawai tidak berhasil ditambahkan'"></h2>
         <a class="btn btn-primary" th:href="@{/cabang/view(noCabang=${noCabang})}">Kembali</a>
       </div>
     </div>
