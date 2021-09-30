@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.time.LocalTime;
+
 @Controller
 public class PegawaiController {
     @Qualifier("pegawaiServiceImpl")
@@ -72,17 +74,19 @@ public class PegawaiController {
         return "update-pegawai";
     }
 
-    @GetMapping(value="/pegawai/delete/{noPegawai}/{noCabang}")
-    public String deletePegawai(
-            @PathVariable(value = "noPegawai", required = true) Long noPegawai,
-            @PathVariable(value = "noCabang", required = true)  Long noCabang,
-            Model model){
-        boolean statusTutup = cabangService.isTutup(noCabang);
+    @PostMapping("/pegawai/delete")
+    public String deletePegawaiSubmit(
+            @ModelAttribute CabangModel cabang,
+            Model model
+    ) {
+        boolean statusTutup = cabangService.isTutup(cabang.getNoCabang());
         if (statusTutup){
-            pegawaiService.deletePegawaiById(noPegawai);
+            for (PegawaiModel pegawai : cabang.getListPegawai()) {
+                pegawaiService.deletePegawaiById(pegawai.getNoPegawai());
+            }
         }
-        model.addAttribute("noCabang", noCabang);
-        model.addAttribute("statusTutup", statusTutup);
+        model.addAttribute("noCabang",cabang.getNoCabang());
+        model.addAttribute("statusTutup",statusTutup);
         return "delete-pegawai";
     }
 }

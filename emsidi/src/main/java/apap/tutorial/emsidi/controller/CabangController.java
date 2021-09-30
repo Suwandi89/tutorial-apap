@@ -1,8 +1,10 @@
 package apap.tutorial.emsidi.controller;
 
 import apap.tutorial.emsidi.model.CabangModel;
+import apap.tutorial.emsidi.model.MenuModel;
 import apap.tutorial.emsidi.model.PegawaiModel;
 import apap.tutorial.emsidi.service.CabangService;
+import apap.tutorial.emsidi.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -18,9 +20,16 @@ public class CabangController {
     @Autowired
     private CabangService cabangService;
 
+    @Qualifier("menuServiceImpl")
+    @Autowired
+    private MenuService menuService;
+
     @GetMapping("/cabang/add")
     public String addCabangForm(Model model){
+        int numRows = 1;
+        model.addAttribute("listMenu",menuService.getListMenu());
         model.addAttribute("cabang", new CabangModel());
+        model.addAttribute("numRows", numRows);
         return "form-add-cabang";
     }
 
@@ -67,6 +76,7 @@ public class CabangController {
         List<PegawaiModel> listPegawai = cabang.getListPegawai();
         model.addAttribute("cabang", cabang);
         model.addAttribute("listPegawai", listPegawai);
+        model.addAttribute("listMenu", cabang.getListMenu());
         return "view-cabang";
     }
 
