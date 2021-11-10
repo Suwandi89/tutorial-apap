@@ -2,6 +2,21 @@
 ## Authors
 * **Suwandi Kurniawan** - *1906299175* - *A*
 ---
+## Tutorial 4
+### What I have learned today
+Saya belajar lebih lanjut mengenai thymeleaf, saya belajar menggunakan komponen yang dapat direuse pada setiap page seperti contoh navbar yang diletakkan dalam fragments, saya juga belajar merapikan tata letak komponen seperti merapikan item ke dalam tabel. Lab ini cukup seru namun pada implementasinya beberapa ternyata cukup sulit terutama add menu pada form add cabang.
+### Pertanyaan
+1. Jelaskan perbedaan th:include dan th:replace!
+> th:include berati memasukkan konten yang ada di fragments kedalam tag dari hostnya. Sedangkan th:replace berfungsi untuk mengganti tag host dengan fragmen yang berarti menghapus tag host dan sebagai pengganti tag host itu akan menambahkan fragmen yang ditentukan termasuk tag fragmen.
+2. Jelaskan apa fungsi dari th:object!
+> th:object digunakan untuk mensubmit form sehingga dapat mengetahui object apa yang di submit. th:object juga digunakan untuk menentukan object mana yang akan diisi kemudian akan ditangkap oleh controller.
+3. Jelaskan perbedaan dari * dan $ pada saat penggunaan th:object! Kapan harus dipakai?
+> * akan mengecek atribut atau varible dari th:object yang sudah di deklarasi sebelumnya, sedangkan $ akan mengecek keseluruhan atribut atau variabel pada th:object atau juga yang dipass dari controller.
+
+### What I did not understand
+- [ ] Saya bingung dengan implementasi fitur tambah row dan delete row pada form add cabang.
+
+---
 ## Tutorial 3
 ### What I have learned today
 Saya belajar terkait database dan relasi database dengan konsep CRUD melalui Spring serta pemanfaatan JPARepository untuk melakukan query pada basis data.
