@@ -113,5 +113,10 @@ public class PegawaiRestController {
         return result;
     }
     
+    @GetMapping(value = "/pegawai/jenisKelamin/{jk}")
+    private List<PegawaiModel> retrieveListPegawaiByJK(@PathVariable("jk") int jk) {
+        return pegawaiRestService.retrieveListPegawaiByJK(jk);
+    }
+    
 
 }

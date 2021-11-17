@@ -6,10 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
+import java.util.List;
 
 @Repository
 public interface PegawaiDB extends JpaRepository<PegawaiModel, Long> {
     Optional<PegawaiModel> findByNoPegawai(Long noPegawai);
+    List<PegawaiModel> findAllByJenisKelamin(int jenisKelamin);
 }
 
 

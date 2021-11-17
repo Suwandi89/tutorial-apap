@@ -56,4 +56,9 @@ public class PegawaiRestServiceImpl implements PegawaiRestService{
             throw new UnsupportedOperationException();
         }
     };
+
+    @Override
+    public List<PegawaiModel> retrieveListPegawaiByJK(int jk) {
+        return pegawaiDb.findAllByJenisKelamin(jk);
+    }
 }
