@@ -2,6 +2,23 @@
 ## Authors
 * **Suwandi Kurniawan** - *1906299175* - *A*
 ---
+## Tutorial 5
+### What I have learned today
+Saya belajar hal baru pada lab kali ini yaitu beberapa dasar-dasar pembuatan API serta pemanfaatannya dibantu dengan aplikasi Postman, kemudian saya juga membuat class baru seperti CabangRestController, CabangRestService, dll. Tentunya semua ini sengat menarik dan menambah ilmu lebih bagi saya.
+### Pertanyaan
+1. Apa itu Postman? Apa kegunaannya?
+> Postman adalah sebuah aplikasi REST Client yang dapat kita gunakan untuk mengetes REST API yang sudah dibuat sebelumnya.
+2. Jelaskan fungsi dari anotasi @JsonIgnoreProperties dan @JsonProperty.
+> @JsonIgnoreProperties berfungsi untuk mengabaikan pemrosesan komponen JSON yang diterima ketika proses serialisasi dan deserialisasi JSON. Sedangkan @JsonProperty berfungsi untuk melakukan pemetaan nama dari properti beserta dengan Key JSON ketika proses serialisasi dan deserialisasi.
+3. Apa kegunaan atribut WebClient?
+> Kegunaan atribut WebClient adalah untuk mengirim serta menerima data dari resource URi dan memanggil REST services.
+4. Apa itu ResponseEntity dan BindingResult? Apa kegunaannya?
+> ResponseEntity merupakan suatu perwakilan dari seluruh respons HTTP yang berguna untuk mengikonfigurasi response HTTP secara keseluruhan. Sedangkan BindingResult berisi informasi terkait validasi serta informasi tentang kesalahan yang mungkin terjadi. BindingResult ini dapat digunakan untuk mengecek kesalahan kita saat pemanggilan method.
+
+### What I did not understand
+- [ ] Saya masih sedikit bingung dengan pemanfaatan yang lebih efektif dari json yang didapat dengan mengakses API.
+
+---
 ## Tutorial 4
 ### What I have learned today
 Saya belajar lebih lanjut mengenai thymeleaf, saya belajar menggunakan komponen yang dapat direuse pada setiap page seperti contoh navbar yang diletakkan dalam fragments, saya juga belajar merapikan tata letak komponen seperti merapikan item ke dalam tabel. Lab ini cukup seru namun pada implementasinya beberapa ternyata cukup sulit terutama add menu pada form add cabang.
