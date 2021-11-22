@@ -65,11 +65,15 @@ public class UserController {
     @PostMapping("/updatePassword")
     public String updatePasswordSubmit(@ModelAttribute UserModel userAwal, String username, String password, String password1, String password2, Model model){
         UserModel user = userService.getUserByUsername(username);
-        if (userService.matchPassword(user.getPassword(), password)){
-            if(password1.equals(password2)){
-                userService.updatePassword(user, password1);
+        if (userService.matchPassword(user.getPassword(), password)) {
+            if (!userService.matchPassword(user.getPassword(), password1)){
+                if (password1.equals(password2)) {
+                    userService.updatePassword(user, password1);
+                } else {
+                    model.addAttribute("fail", true);
+                }
             } else {
-                model.addAttribute("fail", true);
+                model.addAttribute("failval", true);
             }
         } else {
             model.addAttribute("fail", true);

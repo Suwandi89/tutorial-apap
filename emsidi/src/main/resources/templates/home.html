@@ -39,6 +39,7 @@
             <a th:href="@{/user/updatePassword}" class="mx-2 btn btn-danger">Update Password</a>
         </div>
         <h4 class="text-center" style="color: red" th:text="${fail} ? 'Password tidak sama' : ''"></h4>
+        <h4 class="text-center" style="color: red" th:text="${failval} ? 'Password baru dan lama tidak boleh sama' : ''"></h4>
     </div>
 </div>
 
