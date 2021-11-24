@@ -19,15 +19,26 @@
 <nav th:replace="fragments/fragment :: navbar('Home')"></nav>
 <div class="d-flex justify-content-center">
     <div class="m-4">
+        <div class="d-flex justify-content-center">
+            <h2 th:text="'Hello ' + ${#httpServletRequest.remoteUser}+'!'">Login as</h2>
+        </div>
         <h2>Selamat datang di Emsidi</h2>
         <div class="d-flex justify-content-center">
-            <a th:href="@{/cabang/viewall}" class="mx-2 btn btn-dark">Lihat semua cabang</a>
-            <a th:href="@{/cabang/add}" class="mx-2 btn btn-outline-dark">Tambah cabang</a>
+            <a th:href="@{/cabang/viewall}" class="mx-2 btn btn-danger">Lihat semua cabang</a>
+            <a th:href="@{/cabang/add}" class="mx-2 btn btn-outline-danger">Tambah cabang</a>
         </div>
         <div class="my-3 d-flex justify-content-center">
-            <a th:href="@{/menu/viewall}" class="mx-2 btn btn-dark">Lihat semua menu</a>
-            <a th:href="@{/menu/add}" class="mx-2 btn btn-outline-dark">Tambah menu</a>
+            <a th:href="@{/menu/viewall}" class="mx-2 btn btn-danger">Lihat semua menu</a>
+            <a th:href="@{/menu/add}" class="mx-2 btn btn-outline-danger">Tambah menu</a>
         </div>
+        <div class="my-3 d-flex justify-content-center">
+            <a th:href="@{/user/viewall}" class="mx-2 btn btn-warning">Lihat semua User</a>
+            <a th:href="@{/user/add}" class="mx-2 btn btn-outline-warning">Tambah User Baru</a>
+        </div>
+        <div class="my-3 d-flex justify-content-center">
+            <a th:href="@{/user/updatePassword}" class="mx-2 btn btn-danger">Update Password</a>
+        </div>
+        <h4 class="text-center" style="color: red" th:text="${fail} ? 'Password tidak sama' : ''"></h4>
     </div>
 </div>
 

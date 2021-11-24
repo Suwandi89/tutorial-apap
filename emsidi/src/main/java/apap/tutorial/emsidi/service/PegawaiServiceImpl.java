@@ -1,6 +1,5 @@
 package apap.tutorial.emsidi.service;
 
-import apap.tutorial.emsidi.model.CabangModel;
 import apap.tutorial.emsidi.model.PegawaiModel;
 import apap.tutorial.emsidi.repository.PegawaiDB;
 import org.springframework.beans.factory.annotation.Autowired;

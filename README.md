@@ -2,6 +2,49 @@
 ## Authors
 * **Suwandi Kurniawan** - *1906299175* - *A*
 ---
+## Tutorial 6
+### What I have learned today
+Saya belajar pentingnya WebSecurity pada pembuatan web karena dapat menjaga keamanan akses pada website, pada lab ini saya belajar membuat User yang memiliki data Username serta Password yang memiliki patern.
+### Pertanyaan
+1. Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda buat) konsep tersebut diimplementasi?
+> Otentikasi merupakan proses verifikasi detail pengguna untuk mengidentifikasinya dan memberikan akses ke sistem. Otorisasi merupakan proses memeriksa hak atau izin pengguna yang diotentikasi untuk mendapatkan akses sistem bagian spesifik. Berikut merupakan contoh implementasi otentikasi pada class WebSecurityConfig: 
+```
+@Autowired
+public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception{
+    auth.userDetailsService(userDetailsService).passwordEncoder(encoder());
+}
+```
+Berikut merupakan contoh implementasi otorisasi pada class WebSecurityConfig:
+```
+@Override
+protected void configure(HttpSecurity http) throws Exception {
+    http
+            .authorizeRequests()
+            .antMatchers("/css/**").permitAll()
+            .antMatchers("/js/**").permitAll()
+            .antMatchers("/user/viewall","/user/add","/user/delete/**").hasAuthority("Admin")
+            .antMatchers("/menu/add").hasAuthority("Manajer")
+            .anyRequest().authenticated()
+            .and()
+            .formLogin()
+            .loginPage("/login").permitAll()
+            .and()
+            .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+            .logoutSuccessUrl("/login").permitAll();
+}
+```
+2. Apa itu BCryptPasswordEncoder? Jelaskan secara singkat cara kerja dan tujuannya
+> BCryptPasswordEncoder merupakan fungsi hashing yang digunakan untuk mengenkripsi password sehingga tidak diketahui password aslinya walaupun sudah dilihat di database. BCryptPasswordEncoder melakukan encrypt Raw String menjadi String yang sudah diproses dengan algoritma agar tidak mudah diketahui.
+3. Apakah penyimpanan password sebaiknya menggunakan encryption atau hashing? Mengapa demikian?
+> Penyimpanan password sebaiknya menggunakan encryption atau hashing karena untuk tujuan security sehingga meskipun ada yang mengakses database dan melihat password user namun yang sebenarnya terlihat adalah password yangs udah dilakukan encryption atau hashing.
+4. Jelaskan secara singkat apa itu UUID beserta penggunaannya!
+> UUID adalah 128-bit angka yang digunakan untuk mengidentifikasi secara unik beberapa objek atau entitas di sistem komputer. UUID digunakan untuk meningkatkan keamanan data pengguna dikarenakan id pengguna akan digenerate secara unik dengan hashing sebanyak 32 karakter secara acak sehingga id pengguna aman dan tidak mudah untuk diretas.
+5. Apa kegunaan class UserDetailsServiceImpl.java? Mengapa harus ada class tersebut padahal kita sudah memiliki class UserRoleServiceImpl.java?
+> UserDetailsService adalah interface yang saya import dari Spring dalam kerangka kerja Spring Security, yang digunakan untuk mengambil informasi otentikasi dan otorisasi pengguna. Kegunaan class UserDetailsServiceImpl.java adalah implementasi yang digunakan atas UserDetailsService agar dapat menerapkan otentikasi dan otorisasi secara khusus sesuai dengan requirement yang diinginkan.
+### What I did not understand
+- [ ] Saya masih sedikit bingung terkait syntax-syntax yang digunakan pada pemanfaatan otentikasi dan otorisasi.
+
+---
 ## Tutorial 5
 ### What I have learned today
 Saya belajar hal baru pada lab kali ini yaitu beberapa dasar-dasar pembuatan API serta pemanfaatannya dibantu dengan aplikasi Postman, kemudian saya juga membuat class baru seperti CabangRestController, CabangRestService, dll. Tentunya semua ini sengat menarik dan menambah ilmu lebih bagi saya.
