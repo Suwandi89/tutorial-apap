@@ -47,6 +47,22 @@ export default class Home extends React.Component {
         this.setState({ balance: this.state.balance+item.price})
     }
 
+    handleRemoveAllItemFromCart = (item) => {
+        const newItems = [...this.state.cartItems];
+        var i;
+        var bal = this.state.balance;
+        for (i = 0; i < newItems.length; i++){
+            const removeItem = newItems[i];
+            const targetInd = newItems.findIndex((it) => it.id === removeItem.id);
+            removeItem.inCart = false;
+            newItems.splice(targetInd, 1);
+            this.updateShopItem(removeItem, false);
+            bal += item.price
+        }
+        this.setState({ cartItems: newItems });
+        this.setState({ balance: bal})
+    }
+
     updateShopItem = (item, inCart) => {
         const tempShopItems = this.state.shopItems;
         const targetInd = tempShopItems.findIndex((it) => it.id === item.id);
@@ -80,6 +96,7 @@ export default class Home extends React.Component {
                     <div className="row mt-3">
                         {!this.state.cartHidden ? (
                             <div className="col-sm">
+                                <button onClick={this.handleRemoveAllItemFromCart}>Remove All</button>
                                 <List 
                                     title="My Cart" 
                                     items={this.state.cartItems}
