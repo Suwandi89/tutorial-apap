@@ -2,6 +2,40 @@
 ## Authors
 * **Suwandi Kurniawan** - *1906299175* - *A*
 ---
+## Tutorial 7
+### What I have learned today
+Saya belajar menggunakan React dalam membangun sebuah web, dengan menggunakan React terlihat perubahan yang signifikan dibandingkan dengan lab-lab sebelumnya karena user experience yang lebih baik, meskipun syntax-syntaxnya yang cukup sulit karena masih belum terbiasa namun secara keseluruhan React sangatlah menarik.
+### Pertanyaan
+1. Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi dari apa yang Anda jelaskan
+###### Soal 1
+Saya membuat function handleRemoveItemFromCart dimana logikanya adalah ketika menekan button delete maka akan dihapus dari Cart sehingga item kembali tersedia dan dapat ditambahkan ke Cart lagi, pada implementasinya saya menghapus item yang dipilih dari list item dengan menggunakan syntax ```newItems.splice(targetInd, 1);```, kemudian saya memanggil function updateShopItem agar statusnya tidak daam cart lagi. Berikut ini adalah link screenshot dari soal ini:
+Sebelum dihapus:
+https://drive.google.com/file/d/1vtroGRhlwlfmf9SfB4ANOg-0B42Kra5Y/view?usp=sharing
+Sesudah dihapus:
+https://drive.google.com/file/d/14DhRhCtxE7LIo0GIXZM6fh6CRXtcAAsd/view?usp=sharing
+###### Soal 2
+Saya menambahkan kode ```this.setState({ balance: this.state.balance-item.price})``` dan juga ```this.setState({ balance: this.state.balance+item.price})``` pada function handleAddItemToCart dan handleRemoveItemFromCart di Home/index.js class based component yang berarti saya mengupdate state balance dengan balance saat itu dikurangi dengan harga barang saat ingin menambahkan ke Cart sedangkan akan mengupdate state balance dengan balance saat itu ditambah dengan harga barang saat ingin menghapus barang dari Cart. Kemudian pada Functional component saya menambahkan ```setBalance(balance-item.price);``` dan ```setBalance(balance+item.price);``` yang logikanya sama dengan class based component. Berikut ini adalah link screenshot dari soal ini:
+*Saat menambahkan barang ke Cart*
+https://drive.google.com/file/d/1uVAU4xckKHA-hbRIU-rdR6NSAlZ96vNx/view?usp=sharing
+https://drive.google.com/file/d/1T5Hs4L9RkEFsAAEj9VVrqAit9IpixwRp/view?usp=sharing
+*Saat menghapus barang dari Cart*
+https://drive.google.com/file/d/1ilnIW7bBActVMbH4_iuGygHaQXJiWIKT/view?usp=sharing
+https://drive.google.com/file/d/1PpTDTLhis1VH-Ys5VPtRmMOm9GBCP5r2/view?usp=sharing
+###### Soal 3
+Saya hanya menambahkan logika if pada saat ingin menambahkan barang ke Cart agar hanya menambahkan barang jika balance > item.price. Berikut ini adalah link screenshot dari soal ini:
+https://drive.google.com/file/d/1Ds41ub_i5eYI6b454I8-1skNDnMqJed1/view?usp=sharing
+2. Menurut pemahaman kamu selama pengerjaan tutorial ini, apa perbedaan antara state dan props?
+> Menurut saya, state merupakan sebuah data private dari sebuah component yang hanya dapat diakses pada component tersebut tidak bisa dari component lain. Sedangkankan props merupakan singkatan dari property yang merupakan sebuah parameter dari fungsi component.
+3. Menurut kamu, apakah sebaiknya kita menggunakan component (e.g. List, Item) dalam React? sebutkan alasannya.
+> Menurut saya, jelas bahwa penggunaan component adalah langkah yang sangat baik karena code tersebut dapat direuse berulang kali sesuai dengan kebutuhan. Contohnya pada tutorial ini dimana terdapat komponen List dan Item yang digunakan berulang kali.
+4. Apa perbedaan class component dan functional component?
+> Perbedaan class component dan functional component adalah yang pertama, class component membutuhan constructor karena digunakan untuk menyimpan state, sedangkan functional component tidak membutuhkan constructor, yang kedua, class component dikenal sebagai stateful component karena mengimplementasikan logic dan state, sedangkan functional component dikenal sebagai stateless component karena hanya menerima data dan menampilkannya. Sumber : https://www.geeksforgeeks.org/differences-between-functional-components-and-class-components-in-react/
+5. Dalam react, apakah perbedaan component dan element?
+> Perbedaan component dan element adalah component merupakan sebuah function atau class yang menerima input secara opsional dan menampilkannya pada React element, sedangkan element merupakan sesuatu yang direturn oleh React component yang menjelaskan secara virtual DOM nodes yang merepresentasikan komponen.
+### What I did not understand
+-
+
+---
 ## Tutorial 6
 ### What I have learned today
 Saya belajar pentingnya WebSecurity pada pembuatan web karena dapat menjaga keamanan akses pada website, pada lab ini saya belajar membuat User yang memiliki data Username serta Password yang memiliki patern.
