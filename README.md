@@ -2,6 +2,32 @@
 ## Authors
 * **Suwandi Kurniawan** - *1906299175* - *A*
 ---
+## Tutorial 8
+### What I have learned today
+Saya belajar pentingnya WebSecurity pada pembuatan web karena dapat menjaga keamanan akses pada website, pada lab ini saya belajar membuat User yang memiliki data Username serta Password yang memiliki patern.
+### Pertanyaan
+1. Ceritakan langkah - langkah yang kalian lakukan untuk solve LATIHAN no.1, dan mengapa kalian melakukan langkah - langkah tersebut?
+> Ketika saya berhasil melakukan post ke API saya langsung melakukan setState agar semuanya kembali menjadi kosong, dengan cara seperti ini :
+```
+this.setState({
+    title: "",
+    price: 0,
+    description: "",
+    category: "",
+    quantity: 0
+})
+```
+Setelah itu saya lakukan this.loadData() dan ketika saya membuka formnya kembali akan menjadi kosong lagi karena statenya sudah di set menjadi kosong lagi tadi.
+2. Jelaskan fungsi dari async dan await!
+> Async memungkinkan kita untuk melakukan fetch data pada aplikasi React kita. Sedangkan await itu sendiri digunakan dalam blok async dan await akan menunggu hingga janji selesai atau ditolak. Perlu diketahui bahwa itu hanya membuat blok fungsi async menunggu dan bukan keseluruhan eksekusi program.
+3. Masukkan jawaban dari Screenshot yang diperintahkan di halaman 9 pada Component Lifecycle pada pertanyaan ini.
+> https://docs.google.com/document/d/1PHDFcCloyiwykZ8JZ8bHfvS4Itr2OsjWsQUExESbfoo/edit?usp=sharing
+4. Jelaskan fungsi dari componentDidMount, shouldComponentUpdate, componentDidUpdate, componentWillReceiveProps, componentWillUnmount. Notes : Penjelasan harus mencantumkan “kapan fungsi dipanggil” dan “use case apa saja yang biasanya menggunakan lifecycle method tersebut”.
+> componentDidMount merupakan fungsi yang dipanggil setelah komponen-komponen berhasil dibuat dan ditempatkan pada DOM, usecase yang biasa menggunakan lifecycle fase Mounting ini adalah ketika ingin mengetahui apakah suatu komponen selesai dibuat. Kemudian shouldComponentUpdate merupakan fungsi yang dipanggil setelah komponen atau state mengalami perubahan, usecase yang biasa menggunakannya adalah ketika ingin mengetahui perubahan porps/state dari komponen terkait componentDidUpdate. componentDidUpdate merupakan fungsi yang dipanggil sebelum maupun sesudah komponen dirender kembali, usecase yang biasa menggunakannya adalah ketika ada komponen yang diupdate dan perlu dirender ulang ataupun tidak. Selanjutnya componentWillReceiveProps merupakan fungsi yang dipanggil sebelum komponen menerima props yang nilainya telah berubah, use case yang biasa menggunakan lifecycle pada fase Updating ini adalah saat data yang dibutuhkan adalah render yang pertama dan DOM perlu diubah disesuaikan dengan data yang diterima, terakhir componentWillUnmount merupakan fungsi yang dipanggil saat ingin menghapus atau menyingkirkan komponen, dan usecase yang biasa menggunakannya adalah saat ingin menutup sebuah menu.
+### What I did not understand
+- [ ] Saya merasa syntaxnya masih harus didalami lagi karena banyak yang kurang familiar.
+
+---
 ## Tutorial 7
 ### What I have learned today
 Saya belajar menggunakan React dalam membangun sebuah web, dengan menggunakan React terlihat perubahan yang signifikan dibandingkan dengan lab-lab sebelumnya karena user experience yang lebih baik, meskipun syntax-syntaxnya yang cukup sulit karena masih belum terbiasa namun secara keseluruhan React sangatlah menarik.
